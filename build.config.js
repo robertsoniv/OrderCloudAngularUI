@@ -58,7 +58,7 @@ module.exports = {
 			'vendor/angular-ui-grid/ui-grid.js'
 		],
 		less: [
-
+			'vendor/font-awesome/less/**/*.less'
 		],
 		css: [
 			'vendor/angular-ui-grid/ui-grid.css'
