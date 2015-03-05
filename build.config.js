@@ -19,7 +19,11 @@ module.exports = {
 	 * app's unit tests.
 	 */
 	app_files: {
-		js: [ 'src/**/*.js', '!src/**/*.spec.js' ]
+		js: [ 'src/**/*.js', '!src/**/*.spec.js' ],
+		custom_modules: [
+			'*/**/*.js'
+		],
+		less: '**/*.less'
 	},
 
 	/**
@@ -51,6 +55,12 @@ module.exports = {
 	 */
 	vendor_files: {
 		js: [
+
+		],
+		less: [
+
+		],
+		css: [
 
 		]
 	}

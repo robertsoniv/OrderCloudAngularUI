@@ -81,12 +81,26 @@ module.exports = function(grunt) {
 			continuous: {
 				singleRun: true
 			}
+		},
+		copy: {
+			vendors: {
+				expand: true,
+				src: ['<%= vendor_files.js %>','<%= vendor_files.less %>','<%= vendor_files.css %>'],
+				dest: '<%= compile_dir %>'
+			},
+			src: {
+				cwd: 'src/',
+				expand: true,
+				src: ['<%= app_files.custom_modules %>','<%= app_files.less %>'],
+				dest: '<%= compile_dir %>/modules'
+			}
+
 		}
-	}
+	};
 
 	grunt.initConfig( grunt.util._.extend( userConfig, taskConfig ) );
 
 	grunt.registerTask( 'compile', [
-		'clean', 'concat:build_js', 'ngAnnotate', 'concat:compile_js', 'uglify'
+		'clean', 'concat:build_js', 'ngAnnotate', 'concat:compile_js', 'uglify', 'copy:src', 'copy:vendors'
 	]);
 };

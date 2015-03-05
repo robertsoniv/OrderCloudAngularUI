@@ -1,2 +1,4 @@
-angular.module('orderCloud.ui', [])
+angular.module('orderCloud.ui', [
+	'orderCloud.validate'
+])
 ;

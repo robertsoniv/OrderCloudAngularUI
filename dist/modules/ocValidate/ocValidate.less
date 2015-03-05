@@ -1,0 +1,24 @@
+form {
+  input[oc-validate] {
+	& + p[ng-messages] {
+	  color: red;
+	  height:0;
+	  margin:0;
+	  position: relative;
+	  text-align: right;
+	  pointer-events:none;
+	}
+  }
+}
+
+small.oc-validate {
+  position:absolute;
+  right:20px;
+  top:-27px;
+}
+
+@media(orientation: portrait) {
+  small.oc-validate {
+	top:-22px;
+  }
+}

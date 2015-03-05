@@ -1,5 +1,5 @@
 /**
- * OrderCloudUI - v0.0.1 - 2015-03-04
+ * OrderCloudUI - v0.0.1 - 2015-03-05
  * https://github.com/robertsoniv/OrderCloudAngularUI
  *
  * Copyright (c) 2015 Four51, Inc.
@@ -7,9 +7,11 @@
  */
 (function ( window, angular, undefined ) {
 
-angular.module('orderCloud.ui', [])
+angular.module('orderCloud.ui', [
+	'orderCloud.validate'
+])
 ;
-angular.module('orderCloud.ui')
+angular.module('orderCloud.validate', [])
 	.directive('ocValidate', ocValidate)
 	.controller( 'ocValidateCtrl', ocValidateCtrl)
 	.factory( 'ocValidateService', ocValidateService)
