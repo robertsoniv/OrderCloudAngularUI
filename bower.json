@@ -21,6 +21,7 @@
     "src",
     "karma",
     "vendor",
+	"!dist/vendor",
     "test",
     "tests",
     ".bower.json",
