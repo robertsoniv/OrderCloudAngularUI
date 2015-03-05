@@ -1,4 +1,5 @@
 angular.module('orderCloud.ui', [
-	'orderCloud.validate'
+	'orderCloud.validate',
+	'ui.grid'
 ])
 ;

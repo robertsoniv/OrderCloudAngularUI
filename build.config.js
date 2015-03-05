@@ -55,13 +55,13 @@ module.exports = {
 	 */
 	vendor_files: {
 		js: [
-
+			'vendor/angular-ui-grid/ui-grid.js'
 		],
 		less: [
 
 		],
 		css: [
-
+			'vendor/angular-ui-grid/ui-grid.css'
 		]
 	}
 };
