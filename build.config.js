@@ -55,6 +55,7 @@ module.exports = {
 	 */
 	vendor_files: {
 		js: [
+			'vendor/angular-ui-utils/ui-utils.js'
 		],
 		less: [
 		],
