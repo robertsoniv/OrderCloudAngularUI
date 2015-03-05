@@ -1,0 +1,2 @@
+angular.module('orderCloud.ui', [])
+;

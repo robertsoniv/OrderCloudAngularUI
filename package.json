@@ -1,0 +1,29 @@
+{
+	"author": "Four51, Inc.",
+	"name": "OrderCloudUI",
+	"version": "0.0.1",
+	"homepage": "https://github.com/robertsoniv/OrderCloudAngularUI",
+	"licenses": {
+		"type": "MIT",
+		"url": "https://raw.github.com/robertsoniv/OrderCloudAngularUI/master/LICENSE"
+	},
+	"bugs": "https://github.com/Four51/OrderCloudAngularUI/issues",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Four51/OrderCloudAngularUI.git"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-clean": "^0.4.1",
+		"grunt-contrib-concat": "^0.3.0",
+		"grunt-contrib-copy": "^0.4.1",
+		"grunt-contrib-uglify": "^0.2.7",
+		"grunt-contrib-watch": "^0.4.4",
+		"grunt-karma": "^0.8.2",
+		"grunt-ng-annotate": "^0.8.0",
+		"karma": "^0.12.9",
+		"karma-firefox-launcher": "^0.1.3",
+		"karma-jasmine": "^0.1.5"
+	}
+}
