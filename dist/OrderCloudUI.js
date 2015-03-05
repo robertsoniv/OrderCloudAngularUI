@@ -8,8 +8,7 @@
 (function ( window, angular, undefined ) {
 
 angular.module('orderCloud.ui', [
-	'orderCloud.validate',
-	'ui.grid'
+	'orderCloud.validate'
 ])
 ;
 angular.module('orderCloud.validate', [])
