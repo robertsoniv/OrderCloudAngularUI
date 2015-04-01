@@ -1,0 +1,16 @@
+[oc-validate] {
+  &:not(.ng-dirty) + div[ng-messages] {
+	display:none;
+  }
+  & + div[ng-messages] {
+	position: relative;
+	text-align: right;
+	pointer-events:none;
+	.oc-validate {
+	  margin:0;
+	  font-size:0.6em;
+	  position: absolute;
+	  top:-60px;
+	}
+  }
+}

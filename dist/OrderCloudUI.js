@@ -2361,26 +2361,63 @@ angular.module('ui.utils',  [
 (function ( window, angular, undefined ) {
 
 angular.module('orderCloud.ui', [
+	'orderCloud.validate',
 	'ui.utils'
 ])
 ;
-angular.module('orderCloud.ui')
-	.directive('ocFloatInput', ocFloatInput)
+angular.module('orderCloud.validate', [])
+	.directive('ocValidate', ocValidate)
+	.controller( 'ocValidateCtrl', ocValidateCtrl)
+	.factory( 'ocValidateService', ocValidateService)
 ;
 
-function ocFloatInput() {
-	var obj = {
-		link: function(scope, element) {
-			var inputElement = element.find('INPUT');
-			inputElement.on('blur', function() {
-				if (inputElement.val()) {
-					inputElement.addClass('oc-filled');
-				} else {
-					$(inputElement).removeClass('oc-filled');
-				}
-			});
-		}
+function ocValidate() {
+	var directive = {
+		restrict: 'A',
+		controller: 'ocValidateCtrl'
 	};
-	return obj;
+
+	return directive;
 }
+
+function ocValidateCtrl($scope, $compile, $element, ocValidateService) {
+	$element.after( $compile( ocValidateService.setMessages($element) )( $scope ));
+}
+ocValidateCtrl.$inject = ["$scope", "$compile", "$element", "ocValidateService"];
+
+function ocValidateService() {
+	var service = {
+		setMessages: _setMessages
+	};
+
+	return service;
+	///////////////
+
+	function _setMessages(e) {
+		var formName = e[0].form.name,
+			fieldName = e.attr('name');
+
+		if (!formName || !fieldName) return;
+
+		var html = [
+				'<div ng-messages="' + formName + '.' + fieldName + '.$error">',
+			'<p class="oc-validate" ng-message="required">Required field</p>',
+				'<p class="oc-validate" ng-message="minlength">Min of ' + e.attr('ng-minlength') + ' characters</p>',
+				'<p class="oc-validate" ng-message="maxlength">Max of ' + e.attr('ng-maxlength') + ' characters</p>',
+				'<p class="oc-validate" ng-message="pattern">Must follow ' + (fieldName.toLowerCase()) + ' pattern</p>',
+			'<p class="oc-validate" ng-message="email">Invalid email</p>',
+			'<p class="oc-validate" ng-message="number">Numbers only</p>',
+			'<p class="oc-validate" ng-message="url">Invalid URL</p>',
+			'<p class="oc-validate" ng-message="date">Invalid date</p>',
+			'<p class="oc-validate" ng-message="time">Invalid time</p>',
+			'<p class="oc-validate" ng-message="month">Invalid month</p>',
+			'<p class="oc-validate" ng-message="week">Invalid week</p>',
+			'</div>'
+		].join('');
+
+		return html;
+	}
+}
+
+
 })( window, window.angular );
