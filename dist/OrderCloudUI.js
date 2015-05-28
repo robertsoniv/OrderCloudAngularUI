@@ -3691,9 +3691,13 @@ angular.module('orderCloud.modal', ['orderCloud.modal.tpls'])
 
 				if (domEl.attr('modal-animation') && $animate.enabled()) {
 					// transition out
-					domEl.one('$animate:close', function closeFn() {
-						$rootScope.$evalAsync(afterAnimating);
-					});
+
+					//TODO: Bug when using angular 1.4+ the replacement below fixes it and is from https://github.com/angular-ui/bootstrap/issues/3633
+
+					//domEl.one('$animate:close', function closeFn() {
+					//	$rootScope.$evalAsync(afterAnimating);
+					//});
+					$rootScope.$evalAsync(afterAnimating);
 				} else {
 					// Ensure this call is async
 					$timeout(afterAnimating);
