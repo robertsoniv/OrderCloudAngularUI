@@ -1,5 +1,5 @@
 /**
- * OrderCloudUI - v0.0.1 - 2015-05-27
+ * OrderCloudUI - v0.0.1 - 2015-05-28
  * https://github.com/robertsoniv/OrderCloudAngularUI
  *
  * Copyright (c) 2015 Four51, Inc.
