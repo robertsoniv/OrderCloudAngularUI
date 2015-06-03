@@ -1,5 +1,5 @@
 /**
- * OrderCloudUI - v0.0.1 - 2015-05-28
+ * OrderCloudUI - v0.0.1 - 2015-06-03
  * https://github.com/robertsoniv/OrderCloudAngularUI
  *
  * Copyright (c) 2015 Four51, Inc.
@@ -3815,7 +3815,6 @@ angular.module('orderCloud.modal', ['orderCloud.modal.tpls'])
 
 				if (domEl.attr('modal-animation') && $animate.enabled()) {
 					// transition out
-
 					//TODO: Bug when using angular 1.4+ the replacement below fixes it and is from https://github.com/angular-ui/bootstrap/issues/3633
 
 					//domEl.one('$animate:close', function closeFn() {
